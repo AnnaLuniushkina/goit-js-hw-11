@@ -70,7 +70,7 @@ function renderImages(images) {
         Notify.success(`We found ${images.totalHits} images for you.`);
     }
     
-    if (images.totalHits <= totalImages) {
+    if (images.totalHits !== 0 ?? totalImages === 0) {
         loadMoreBtn.classList.add('is-hidden');
         Notify.warning(`We're sorry, but you've reached the end of search results.`);
     }
